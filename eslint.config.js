@@ -5,7 +5,14 @@ const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommen
 
 module.exports = defineConfig([
   expoConfig,
-  eslintPluginPrettierRecommended,
+  {
+    ...eslintPluginPrettierRecommended,
+    settings: {
+      prettier: {
+        configPath: '.prettierrc.json',
+      },
+    },
+  },
   {
     ignores: ['dist/*'],
   },
